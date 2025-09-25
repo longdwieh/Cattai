@@ -11959,7 +11959,7 @@ v79:Button("Change Buso Haki State", function()
 end);
 local v122 = game:GetService("Players");
 game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Test Roblox Hub",
+	Title = "longdeptrai",
 	Text = "Loading...",
 	Icon = "rbxthumb://type=Asset&id=83190276951914&w=150&h=150",
 	Duration = 10
@@ -12206,4 +12206,5 @@ function FastAttackConnectorFunction()
 	end);
 	return ReturnFunctions;
 end
+
 return FastAttackConnectorFunction();
