@@ -11961,7 +11961,7 @@ local v122 = game:GetService("Players");
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "longdeptrai",
 	Text = "Loading...",
-	Icon = "rbxthumb://type=Asset&id=83190276951914&w=150&h=150",
+	Icon = "https://i.ibb.co/Y42GXpXV/4b7c992b7a25.jpg",
 	Duration = 10
 });
 spawn(function()
@@ -12208,3 +12208,4 @@ function FastAttackConnectorFunction()
 end
 
 return FastAttackConnectorFunction();
+
