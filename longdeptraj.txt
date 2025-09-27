@@ -165,7 +165,7 @@ v5.Window = function(v134, v135)
 	v170.BackgroundTransparency = 1.1;
 	v170.Position = UDim2.new(0.405426834, 0, 0.075000003, 0);
 	v170.Size = UDim2.new(0, 263, 0, 325);
-	v170.Image = "http://www.roblox.com/asset/?id="   .. tostring(83190276951914) ;
+	v170.Image = ""   .. tostring(83190276951914) ;
 	local v178 = Instance.new("UICorner");
 	v178.Name = "MCNR";
 	v178.Parent = v147;
@@ -193,7 +193,7 @@ v5.Window = function(v134, v135)
 	v197.Position = UDim2.new(0, 30, 0.05, 0);
 	v197.Size = UDim2.new(0, 255, 0.05, 25);
 	v197.Font = Enum.Font.SourceSansBold;
-	v197.Text = "Ten Roblox Hub";
+	v197.Text = "cắt tai Hub";
 	v197.TextSize = 17;
 	v197.TextColor3 = Color3.fromRGB(0, 134, 139);
 	v197.TextXAlignment = Enum.TextXAlignment.Left;
@@ -12208,5 +12208,6 @@ function FastAttackConnectorFunction()
 end
 
 return FastAttackConnectorFunction();
+
 
 
