@@ -165,7 +165,7 @@ v5.Window = function(v134, v135)
 	v170.BackgroundTransparency = 1.1;
 	v170.Position = UDim2.new(0.405426834, 0, 0.075000003, 0);
 	v170.Size = UDim2.new(0, 263, 0, 325);
-	v170.Image = "rbxassetid://76979884950513"   .. tostring(83190276951914) ;
+	v170.Image = "http://www.roblox.com/asset/?id="   .. tostring(83190276951914) ;
 	local v178 = Instance.new("UICorner");
 	v178.Name = "MCNR";
 	v178.Parent = v147;
@@ -987,7 +987,7 @@ v8.BorderSizePixel = 0;
 v8.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0);
 v8.Size = UDim2.new(0, 53.5, 0, 53.5);
 v8.BackgroundTransparency = 1;
-v8.Image = "rbxassetid://76979884950513";
+v8.Image = "rbxassetid://116231965107271";
 v8.Draggable = true;
 v8.MouseButton1Click:Connect(function()
 	game.CoreGui:FindFirstChild("Anchor").Enabled = not game.CoreGui:FindFirstChild("Anchor").Enabled;
@@ -11969,7 +11969,7 @@ local v122 = game:GetService("Players");
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Sakura",
 	Text = "Loading...",
-	Icon = "rbxassetid://76979884950513",
+	Icon = "rbxassetid://116231965107271",
 	Duration = 10
 });
 spawn(function()
@@ -12216,6 +12216,7 @@ function FastAttackConnectorFunction()
 end
 
 return FastAttackConnectorFunction();
+
 
 
 
