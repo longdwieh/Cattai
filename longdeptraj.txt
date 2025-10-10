@@ -1589,6 +1589,14 @@ function CheckQuest()
 			NameMon = "Isle Champion";
 			CFrameQuest = CFrame.new( -16540, 56, 1051);
 			CFrameMon = CFrame.new( -16634, 85, 1106);
+        elseif ((MyLevel == 2500) or (MyLevel <= 2575)) then
+			Mon = "Serpent Hunter";
+			LevelQuest = 1;
+			NameQuest = "TikiQuest1";
+			NameMon = "Serpent Hunter";
+			CFrameQuest = CFrame.new( -16665.18, 105.84, 1581.68);
+			CFrameMon = CFrame.new( -16868.22, 71.83, 1589.64);
+
 		end
 	end
 end
@@ -12208,6 +12216,7 @@ function FastAttackConnectorFunction()
 end
 
 return FastAttackConnectorFunction();
+
 
 
 
