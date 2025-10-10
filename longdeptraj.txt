@@ -1,6 +1,6 @@
 print("Break");
 local v0 = require(game:GetService("ReplicatedStorage").Notification);
-v0.new("<Color=Cyan>Welcome to Cattaihub Hub<Color=/>"):Display();
+v0.new("<Color=Cyan>Welcome Sakura Hub<Color=/>"):Display();
 wait(0.5);
 v0.new("<Color=Yellow>Everyone Goes to Discord to Communicate<Color=/>"):Display();
 wait(1);
@@ -165,7 +165,7 @@ v5.Window = function(v134, v135)
 	v170.BackgroundTransparency = 1.1;
 	v170.Position = UDim2.new(0.405426834, 0, 0.075000003, 0);
 	v170.Size = UDim2.new(0, 263, 0, 325);
-	v170.Image = "hrbxassetid://76979884950513"   .. tostring(83190276951914) ;
+	v170.Image = "rbxassetid://76979884950513"   .. tostring(83190276951914) ;
 	local v178 = Instance.new("UICorner");
 	v178.Name = "MCNR";
 	v178.Parent = v147;
@@ -987,7 +987,7 @@ v8.BorderSizePixel = 0;
 v8.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0);
 v8.Size = UDim2.new(0, 53.5, 0, 53.5);
 v8.BackgroundTransparency = 1;
-v8.Image = "https://i.ibb.co/bjzgq07s/93977b93dfcc.png";
+v8.Image = "rbxassetid://76979884950513";
 v8.Draggable = true;
 v8.MouseButton1Click:Connect(function()
 	game.CoreGui:FindFirstChild("Anchor").Enabled = not game.CoreGui:FindFirstChild("Anchor").Enabled;
@@ -11967,9 +11967,9 @@ v79:Button("Change Buso Haki State", function()
 end);
 local v122 = game:GetService("Players");
 game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "longdeptrai",
+	Title = "Sakura",
 	Text = "Loading...",
-	Icon = "https://i.ibb.co/bjzgq07s/93977b93dfcc.png",
+	Icon = "rbxassetid://76979884950513",
 	Duration = 10
 });
 spawn(function()
@@ -12216,6 +12216,7 @@ function FastAttackConnectorFunction()
 end
 
 return FastAttackConnectorFunction();
+
 
 
 
