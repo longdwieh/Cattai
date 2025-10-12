@@ -11300,7 +11300,7 @@ if World3 then
 		_G.SelectIsland = v1559;
 	end);
 end
-v76:Toggle("Teleport", false, function(v570)
+v76:Toggle("Teleport", true, function(v570)
 	_G.TeleportIsland = v570;
 	if (_G.TeleportIsland == true) then
 		repeat
@@ -12222,6 +12222,7 @@ function FastAttackConnectorFunction()
 end
 
 return FastAttackConnectorFunction();
+
 
 
 
