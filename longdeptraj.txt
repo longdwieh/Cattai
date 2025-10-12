@@ -1592,14 +1592,14 @@ function CheckQuest()
         elseif ((MyLevel == 2550) or (MyLevel <= 2575)) then
 			Mon = "Serpent Hunter";
 			LevelQuest = 1;
-			NameQuest = "TikiQuest2";
+			NameQuest = "TikiQuest3";
 			NameMon = "Serpent Hunter";
 			CFrameQuest = CFrame.new( -16665.18, 105.84, 1581.68);
 			CFrameMon = CFrame.new( -16868.22, 71.83, 1589.64);
          elseif ((MyLevel == 2575) or (MyLevel <= 2600)) then
 			Mon = "Skull Slayers";
 			LevelQuest = 2;
-			NameQuest = "TikiQuest2";
+			NameQuest = "TikiQuest3";
 			NameMon = "Skull Slayers";
 			CFrameQuest = CFrame.new( -16665.18, 105.84, 1581.68);
 			CFrameMon = CFrame.new( -16846.80, 71.28, 1629.97);
@@ -12243,6 +12243,7 @@ function FastAttackConnectorFunction()
 end
 
 return FastAttackConnectorFunction();
+
 
 
 
