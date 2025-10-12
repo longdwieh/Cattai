@@ -1631,6 +1631,13 @@ function CheckQuest()
 			NameMon = "Ocean Prophet";
 			CFrameQuest = CFrame.new( 10884.94, -2086.20, 10036.44);
 			CFrameMon = CFrame.new( 11023.65, -2001.51, 10137.16);
+         elseif ((MyLevel == 2700) or (MyLevel <= 2725)) then
+			Mon = "High Disciple";
+			LevelQuest = 1;
+			NameQuest = "SubmergedQuest3";
+			NameMon = "High Disciple";
+			CFrameQuest = CFrame.new( 9639.39, -1992.45, 9617.28);
+			CFrameMon = CFrame.new( 9839.68, -1993.59, 9685.66);
 		end
 	end
 end
@@ -12250,6 +12257,7 @@ function FastAttackConnectorFunction()
 end
 
 return FastAttackConnectorFunction();
+
 
 
 
