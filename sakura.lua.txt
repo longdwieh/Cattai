@@ -56,7 +56,7 @@ local TabDraco = Window:MakeTab({
     PremiumOnly = false
 })
 
-local TabPlays✨ Kích hoạt UI
+local TabPlays
 OrionLib:Init()
 end;
 -- 🧭 Tạo tab Farm (ví dụ)
@@ -731,6 +731,7 @@ function CheckQuest()
 			NameMon = "Grand Devotee";
 			CFrameQuest = CFrame.new( 9639.39, -1992.45, 9617.28);
 			CFrameMon = CFrame.new( 9582.31, -1993.47, 9829.67);
+
              TabFarm:AddToggle({
 	Name = "Auto Farm Pirates (Sea 3)",
 	Default = false,
