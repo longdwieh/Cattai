@@ -1,0 +1,153 @@
+-- Anya Hub Style UI (No icons version)
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- ScreenGui
+local gui = Instance.new("ScreenGui")
+gui.Name = "AnyaHubUI"
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+
+-- 🟦 Avatar Button (toggle menu)
+local avatarBtn = Instance.new("ImageButton", gui)
+avatarBtn.Name = "AvatarButton"
+avatarBtn.Size = UDim2.new(0, 70, 0, 70)
+avatarBtn.Position = UDim2.new(0, 20, 0, 20)
+avatarBtn.BackgroundTransparency = 1
+avatarBtn.Image = "rbxthumb://type=AvatarHeadShot&id=" .. player.UserId .. "&w=420&h=420"
+avatarBtn.ScaleType = Enum.ScaleType.Fit
+
+local avatarCorner = Instance.new("UICorner", avatarBtn)
+avatarCorner.CornerRadius = UDim.new(1, 0)
+local avatarStroke = Instance.new("UIStroke", avatarBtn)
+avatarStroke.Thickness = 2
+avatarStroke.Color = Color3.fromRGB(0, 150, 255)
+
+-- 🌿 Main Frame (menu)
+local main = Instance.new("Frame", gui)
+main.Name = "MainFrame"
+main.Size = UDim2.new(0, 720, 0, 420)
+main.Position = UDim2.new(0.5, -360, 0.5, -210)
+main.BackgroundColor3 = Color3.fromRGB(23, 40, 28)
+main.BorderSizePixel = 0
+main.Visible = true
+Instance.new("UICorner", main).CornerRadius = UDim.new(0, 10)
+
+-- 🧭 Top bar
+local top = Instance.new("Frame", main)
+top.Size = UDim2.new(1, 0, 0, 32)
+top.BackgroundColor3 = Color3.fromRGB(18, 30, 22)
+top.BorderSizePixel = 0
+Instance.new("UICorner", top).CornerRadius = UDim.new(0, 10)
+
+local title = Instance.new("TextLabel", top)
+title.Text = "Anya Hub | Blox Fruits [BETA]"
+title.Font = Enum.Font.GothamSemibold
+title.TextSize = 16
+title.TextColor3 = Color3.fromRGB(230, 230, 230)
+title.BackgroundTransparency = 1
+title.Position = UDim2.new(0, 12, 0, 0)
+title.Size = UDim2.new(1, -150, 1, 0)
+title.TextXAlignment = Enum.TextXAlignment.Left
+
+local author = Instance.new("TextLabel", top)
+author.Text = "by Sakura"
+author.Font = Enum.Font.Gotham
+author.TextSize = 14
+author.TextColor3 = Color3.fromRGB(160, 160, 160)
+author.BackgroundTransparency = 1
+author.Size = UDim2.new(0, 120, 1, 0)
+author.Position = UDim2.new(1, -130, 0, 0)
+author.TextXAlignment = Enum.TextXAlignment.Right
+
+-- Sidebar (menu buttons)
+local sidebar = Instance.new("Frame", main)
+sidebar.Size = UDim2.new(0, 150, 1, -32)
+sidebar.Position = UDim2.new(0, 0, 0, 32)
+sidebar.BackgroundColor3 = Color3.fromRGB(20, 35, 25)
+sidebar.BorderSizePixel = 0
+Instance.new("UICorner", sidebar).CornerRadius = UDim.new(0, 6)
+
+local buttons = {"Home", "Farming", "Player", "Misc", "Settings"}
+
+for i, name in ipairs(buttons) do
+	local btn = Instance.new("TextButton", sidebar)
+	btn.Size = UDim2.new(1, 0, 0, 40)
+	btn.Position = UDim2.new(0, 0, 0, (i - 1) * 45 + 10)
+	btn.BackgroundColor3 = (name == "Farming") and Color3.fromRGB(35, 60, 40) or Color3.fromRGB(20, 35, 25)
+	btn.Text = name
+	btn.Font = Enum.Font.Gotham
+	btn.TextSize = 16
+	btn.TextColor3 = Color3.fromRGB(230, 230, 230)
+	btn.AutoButtonColor = false
+	Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 6)
+end
+
+-- Content area
+local content = Instance.new("Frame", main)
+content.Size = UDim2.new(1, -180, 1, -60)
+content.Position = UDim2.new(0, 170, 0, 60)
+content.BackgroundTransparency = 1
+
+local title2 = Instance.new("TextLabel", content)
+title2.Text = "Farming"
+title2.Font = Enum.Font.GothamBold
+title2.TextSize = 28
+title2.TextColor3 = Color3.fromRGB(240, 240, 240)
+title2.BackgroundTransparency = 1
+title2.Position = UDim2.new(0, 0, 0, 0)
+title2.Size = UDim2.new(1, 0, 0, 40)
+title2.TextXAlignment = Enum.TextXAlignment.Left
+
+-- Function to create toggle options
+local function createOption(y, name, desc)
+	local frame = Instance.new("Frame", content)
+	frame.Size = UDim2.new(1, -20, 0, 60)
+	frame.Position = UDim2.new(0, 0, 0, y)
+	frame.BackgroundColor3 = Color3.fromRGB(25, 45, 30)
+	frame.BorderSizePixel = 0
+	Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 8)
+
+	local title = Instance.new("TextLabel", frame)
+	title.Text = name
+	title.Font = Enum.Font.GothamSemibold
+	title.TextSize = 18
+	title.TextColor3 = Color3.fromRGB(230, 230, 230)
+	title.BackgroundTransparency = 1
+	title.Size = UDim2.new(0.7, 0, 0, 25)
+	title.Position = UDim2.new(0, 12, 0, 8)
+	title.TextXAlignment = Enum.TextXAlignment.Left
+
+	local descText = Instance.new("TextLabel", frame)
+	descText.Text = desc
+	descText.Font = Enum.Font.Gotham
+	descText.TextSize = 14
+	descText.TextColor3 = Color3.fromRGB(160, 160, 160)
+	descText.BackgroundTransparency = 1
+	descText.Size = UDim2.new(0.9, 0, 0, 18)
+	descText.Position = UDim2.new(0, 12, 0, 34)
+	descText.TextXAlignment = Enum.TextXAlignment.Left
+
+	local toggle = Instance.new("Frame", frame)
+	toggle.Size = UDim2.new(0, 60, 0, 30)
+	toggle.Position = UDim2.new(1, -80, 0.5, -15)
+	toggle.BackgroundColor3 = Color3.fromRGB(15, 25, 20)
+	Instance.new("UICorner", toggle).CornerRadius = UDim.new(0, 15)
+
+	local knob = Instance.new("Frame", toggle)
+	knob.Size = UDim2.new(0, 26, 0, 26)
+	knob.Position = UDim2.new(1, -28, 0.5, -13)
+	knob.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+	Instance.new("UICorner", knob).CornerRadius = UDim.new(1, 0)
+end
+
+createOption(60, "Auto Farm Level", "Autofarms Quests and Mobs")
+createOption(130, "Farm Nearest Mob", "Autofarms nearest mobs")
+createOption(200, "Include Bosses", "Include bosses in routine")
+
+-- 🟢 Toggle visibility
+local isVisible = true
+avatarBtn.MouseButton1Click:Connect(function()
+	isVisible = not isVisible
+	main.Visible = isVisible
+end)
