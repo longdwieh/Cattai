@@ -12,119 +12,108 @@ local player = LocalPlayer
 local plr = LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
-pcall(function()
-    
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/AnhDzaiScript/Setting/refs/heads/main/FastMax.lua"))()
+local Main = Instance.new("Frame")
+Main.Name = "Main"
+Main.Parent = UI
+Main.BackgroundColor3 = Color3.fromRGB(120, 20, 20)
+Main.BackgroundTransparency = 0
+Main.Position = UDim2.new(0.5, -425, 0.5, -260)
+Main.Size = UDim2.new(0, 850, 0, 520)
+
+local UICornerMain = Instance.new("UICorner", Main)
+UICornerMain.CornerRadius = UDim.new(0, 0) -- hình chữ nhật
+
+-- 🧱 Sidebar (thanh danh mục bên trái)
+local Sidebar = Instance.new("Frame")
+Sidebar.Name = "Sidebar"
+Sidebar.Parent = Main
+Sidebar.BackgroundColor3 = Color3.fromRGB(15, 25, 20)
+Sidebar.Size = UDim2.new(0, 180, 1, 0)
+Sidebar.Position = UDim2.new(0, 0, 0, 0)
+
+-- Đổ bóng nhẹ cho Sidebar
+local SidebarStroke = Instance.new("UIStroke", Sidebar)
+SidebarStroke.Thickness = 2
+SidebarStroke.Color = Color3.fromRGB(0, 255, 150)
+
+-- Bo góc nhẹ
+local SidebarCorner = Instance.new("UICorner", Sidebar)
+SidebarCorner.CornerRadius = UDim.new(0, 0)
+
+-- 🧩 Tạo hàm tạo nút danh mục
+local function createCategory(name, order)
+    local btn = Instance.new("TextButton")
+    btn.Parent = Sidebar
+    btn.Text = name
+    btn.Font = Enum.Font.GothamBold
+    btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    btn.TextSize = 16
+    btn.BackgroundColor3 = Color3.fromRGB(25, 40, 30)
+    btn.Size = UDim2.new(1, 0, 0, 40)
+    btn.Position = UDim2.new(0, 0, 0, (order - 1) * 45)
+    btn.BorderSizePixel = 0
+
+    -- Hiệu ứng hover
+    btn.MouseEnter:Connect(function()
+        btn.BackgroundColor3 = Color3.fromRGB(40, 70, 50)
+    end)
+    btn.MouseLeave:Connect(function()
+        btn.BackgroundColor3 = Color3.fromRGB(25, 40, 30)
+    end)
+
+    return btn
+end
+
+-- 🧭 Các danh mục
+local HomeBtn = createCategory("🏠  Home", 1)
+local FarmingBtn = createCategory("🚜  Farming", 2)
+local PlayerBtn = createCategory("🧍  Player", 3)
+local MiscBtn = createCategory("⚙️  Misc", 4)
+local SettingsBtn = createCategory("🔧  Settings", 5)
+
+-- 🪟 ContentFrame (vùng hiển thị bên phải)
+local ContentFrame = Instance.new("Frame")
+ContentFrame.Name = "ContentFrame"
+ContentFrame.Parent = Main
+ContentFrame.BackgroundColor3 = Color3.fromRGB(25, 35, 30)
+ContentFrame.Position = UDim2.new(0, 180, 0, 0)
+ContentFrame.Size = UDim2.new(1, -180, 1, 0)
+
+local UIStrokeContent = Instance.new("UIStroke", ContentFrame)
+UIStrokeContent.Thickness = 1
+UIStrokeContent.Color = Color3.fromRGB(0, 255, 120)
+
+local Label = Instance.new("TextLabel", ContentFrame)
+Label.Size = UDim2.new(1, 0, 0, 50)
+Label.Text = "Farming"
+Label.Font = Enum.Font.GothamBold
+Label.TextSize = 30
+Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label.BackgroundTransparency = 1
+Label.Position = UDim2.new(0, 20, 0, 20)
+
+-- 🧠 Khi click vào từng danh mục
+HomeBtn.MouseButton1Click:Connect(function()
+	Label.Text = "Home"
+	ContentFrame.BackgroundColor3 = Color3.fromRGB(25, 35, 30)
 end)
-local Window = WindUI:CreateWindow({
-	Title = "Anya Hub",
-	Author = "Blox Fruit",
-	Folder = "Anya",
-	Size = UDim2.fromOffset(520, 300),
-	Transparent = true,
-	Theme = "Dark",
-	SideBarWidth = 190,
-	HasOutline = false,
-local Tabs = {
-    InfoTab = Window:Tab({""
-		Title = "Thông Tin",
-		Icon = "info",
-		Desc = "Info Section"
-	}),
-	MainTab = Window:Tab({
-		Title = "Tab Farming",
-		Icon = "house",
-		Desc = "Main Section"
-	}),
-	OthersTab = Window:Tab({
-		Title = "Tab Others",
-		Icon = "inbox",
-		Desc = "Farming Section"
-	}),
-	ItemsTab = Window:Tab({
-		Title = "Tab Items",
-		Icon = "box",
-		Desc = "Items Section"
-	}),
-	SettingsTab = Window:Tab({
-		Title = "Tab Settings",
-		Icon = "settings",
-		Desc = "Settings Section"
-	}),
-	LocalPlayerTab = Window:Tab({
-		Title = "Tab Player",
-		Icon = "user",
-		Desc = "Local Player Section"
-	}),
-	StatsTab = Window:Tab({
-		Title = "Tab Stats",
-		Icon = "chart-no-axes-column",
-		Desc = "Stats Section"
-	}),
-	SeaEventTab = Window:Tab({
-		Title = "Tab Sea Event",
-		Icon = "anchor",
-		Desc = "Sea Event Section"
-	}),
-	SeaStackTab = Window:Tab({
-		Title = "Tab Sea Stack",
-		Icon = "waves",
-		Desc = "Sea Stack Section"
-	}),
-	SeaSettingsTab = Window:Tab({
-		Title = "Tab Sea Settings",
-		Icon = "cog",
-		Desc = "Sea Settings Section"
-	}),
-	DragonDojoTab = Window:Tab({
-		Title = "Tab Dragon Dojo",
-		Icon = "shield",
-		Desc = "Dragon Dojo Section"
-	}),
-	RaceTab = Window:Tab({
-		Title = "Tab Race V4",
-		Icon = "bot",
-		Desc = "Race Section"
-	}),
-	CombatTab = Window:Tab({
-		Title = "Tab Combat",
-		Icon = "sword",
-		Desc = "Combat Section"
-	}),
-	RaidTab = Window:Tab({
-		Title = "Tab Raid",
-		Icon = "door-open",
-		Desc = "Raid Section"
-	}),
-	EspTab = Window:Tab({
-		Title = "Tab Esp",
-		Icon = "scan-eye",
-		Desc = "Esp Section"
-	}),
-	TeleportTab = Window:Tab({
-		Title = "Tab Teleport",
-		Icon = "map-pinned",
-		Desc = "Teleport Section"
-	}),
-	ShopTab = Window:Tab({
-		Title = "Tab Shop",
-		Icon = "shopping-cart",
-		Desc = "Shop Section"
-	}),
-	FruitTab = Window:Tab({
-		Title = "Tab Fruit",
-		Icon = "vegan",
-		Desc = "Fruit Section"
-	}),
-	MiscTab = Window:Tab({
-		Title = "Tab Misc",
-		Icon = "layout-grid",
-		Desc = "Misc Section"
-	}),
-	ServerTab = Window:Tab({
-		Title = "Tab Server",
-		Icon = "server",
-		Desc = "Server Section"
-	})
-};
-        
+
+FarmingBtn.MouseButton1Click:Connect(function()
+	Label.Text = "Farming"
+	ContentFrame.BackgroundColor3 = Color3.fromRGB(30, 50, 40)
+end)
+
+PlayerBtn.MouseButton1Click:Connect(function()
+	Label.Text = "Player"
+	ContentFrame.BackgroundColor3 = Color3.fromRGB(35, 40, 60)
+end)
+
+MiscBtn.MouseButton1Click:Connect(function()
+	Label.Text = "Misc"
+	ContentFrame.BackgroundColor3 = Color3.fromRGB(40, 50, 70)
+end)
+
+SettingsBtn.MouseButton1Click:Connect(function()
+	Label.Text = "Settings"
+	ContentFrame.BackgroundColor3 = Color3.fromRGB(50, 40, 40)
+end)
